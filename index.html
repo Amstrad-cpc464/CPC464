@@ -57,9 +57,24 @@
         /* Sección Hero */
         .hero {
             text-align: center;
-            padding: 50px 20px;
+            padding: 40px 20px;
             background: radial-gradient(circle at center, #18223d 0%, var(--dark-bg) 75%);
             border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Estilo para el logotipo */
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo-img {
+            max-width: 160px;
+            max-height: 160px;
+            border-radius: 12px;
+            border: 2px solid var(--amstrad-cyan);
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+            object-fit: contain;
+            background-color: #000;
         }
 
         .badge {
@@ -280,6 +295,11 @@
 
     <div class="hero">
         <div class="container">
+            <!-- Logotipo del proyecto -->
+            <div class="logo-container">
+                <img src="logo.jpg.jpg" alt="Amstrad CPC 464 Logo" class="logo-img">
+            </div>
+
             <div class="badge">RED TRON (TRC-20) • EDICIÓN CONMEMORATIVA 1984</div>
             <h1>Amstrad CPC 464 Coin (<span>CPC464</span>)</h1>
             <p>Un homenaje digital e inmutable en la blockchain dedicado a los entusiastas, coleccionistas y usuarios del legendario ordenador de 8 bits que marcó nuestra historia.</p>
