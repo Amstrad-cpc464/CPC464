@@ -1,17 +1,390 @@
-<p align="center">
-  <img src="logo.jpg.jpg" alt="Amstrad CPC 464 Coin" width="260"/>
-</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amstrad CPC 464 Coin (CPC464) - Token Oficial Conmemorativo</title>
+    <style>
+        :root {
+            --amstrad-blue: #000080;
+            --amstrad-yellow: #FFFF00;
+            --amstrad-cyan: #00FFFF;
+            --amstrad-green: #00FF66;
+            --amstrad-red: #FF3333;
+            --dark-bg: #0a0c14;
+            --card-bg: #121726;
+            --border-color: #2a3556;
+        }
 
-# Amstrad CPC 464 Coin (CPC464)
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-**Commemorative TRC-20 token celebrating the legendary Amstrad CPC 464 home computer (1984).**
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: #e6e9f0;
+            line-height: 1.6;
+        }
 
-## Token Specifications
-* **Token Name:** Amstrad CPC 464 Coin
-* **Symbol:** CPC464
-* **Network:** TRON (TRC-20)
-* **Decimals:** 6
-* **Total Supply:** 464,000 CPC464 (Fixed Edition)
+        /* Barra superior estilo Amstrad BASIC */
+        .basic-header {
+            background-color: var(--amstrad-blue);
+            color: var(--amstrad-yellow);
+            font-family: 'Courier New', Courier, monospace;
+            padding: 12px 20px;
+            font-weight: bold;
+            border-bottom: 3px solid var(--amstrad-cyan);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-## About the Project
-Created as a tribute to the iconic 8-bit microcomputers of the 1980s and the retro computing community.
+        .rainbow-bar {
+            height: 6px;
+            background: linear-gradient(90deg, #ff0000 0%, #ff0000 33%, #00ff00 33%, #00ff00 66%, #0088ff 66%, #0088ff 100%);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Sección Hero */
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: radial-gradient(circle at center, #18223d 0%, var(--dark-bg) 75%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0, 255, 255, 0.1);
+            color: var(--amstrad-cyan);
+            border: 1px solid var(--amstrad-cyan);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 span {
+            color: var(--amstrad-yellow);
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto 30px auto;
+            font-size: 1.1rem;
+            color: #b0b8d1;
+        }
+
+        /* Botones principales */
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 26px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: var(--amstrad-yellow);
+            color: #000033;
+            box-shadow: 0 4px 15px rgba(255, 255, 0, 0.25);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--amstrad-cyan);
+            border: 2px solid var(--amstrad-cyan);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(0, 255, 255, 0.1);
+        }
+
+        /* Tarjetas de Sección */
+        .section {
+            margin-top: 40px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--amstrad-cyan);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-desc {
+            color: #a0a8c0;
+            margin-bottom: 25px;
+        }
+
+        /* Grid de datos técnicos */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-box {
+            background-color: #0d111c;
+            border: 1px solid var(--border-color);
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #8490b5;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-value {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-top: 5px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Caja de contrato copiable */
+        .contract-box {
+            background-color: #080a10;
+            border: 1px dashed var(--amstrad-green);
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .contract-address {
+            font-family: 'Courier New', monospace;
+            color: var(--amstrad-green);
+            font-size: 0.95rem;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            background-color: #1e2942;
+            color: #ffffff;
+            border: 1px solid #3c4f7a;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .copy-btn:hover {
+            background-color: #2b3b5e;
+        }
+
+        /* Pasos de compra */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .step-card {
+            background-color: #0d111c;
+            border-left: 4px solid var(--amstrad-yellow);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .step-num {
+            font-family: 'Courier New', monospace;
+            color: var(--amstrad-yellow);
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .step-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .step-card p {
+            font-size: 0.92rem;
+            color: #a8b2d1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #6c7899;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 50px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="basic-header">
+        <span>Amstrad 64K Microcomputer (v1.0)</span>
+        <span>Ready _</span>
+    </div>
+    <div class="rainbow-bar"></div>
+
+    <div class="hero">
+        <div class="container">
+            <div class="badge">RED TRON (TRC-20) • EDICIÓN CONMEMORATIVA 1984</div>
+            <h1>Amstrad CPC 464 Coin (<span>CPC464</span>)</h1>
+            <p>Un homenaje digital e inmutable en la blockchain dedicado a los entusiastas, coleccionistas y usuarios del legendario ordenador de 8 bits que marcó nuestra historia.</p>
+            
+            <div class="cta-group">
+                <a href="https://sun.io/?lang=en-US#/v2?t0=T9yD14Nj9j7xAB4dbGeiX9h8unkKHxuWwb&t1=TSA3jH3gr6FqtwqV6p9RJXpcsmkXp8GSGW&type=swap" target="_blank" rel="noopener" class="btn btn-primary">
+                    🛒 Comprar en Red (SunSwap)
+                </a>
+                <a href="https://tronscan.org/#/token20/TSA3jH3gr6FqtwqV6p9RJXpcsmkXp8GSGW" target="_blank" rel="noopener" class="btn btn-secondary">
+                    🔍 Visualización en Red (TronScan)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- SECCIÓN 1: VISUALIZACIÓN EN RED -->
+        <section class="section" id="visualizacion">
+            <h2 class="section-title">📡 Visualización en Red y Transparencia</h2>
+            <p class="section-desc">El token <strong>CPC464</strong> reside de forma permanente en la cadena de bloques pública de TRON. Cualquier miembro de la comunidad puede auditar en tiempo real los movimientos, carteras y el pool de liquidez.</p>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-label">Suministro Total Fijo</div>
+                    <div class="stat-value">464,000 CPC464</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Red / Estándar</div>
+                    <div class="stat-value">TRON (TRC-20)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Pool Inicial</div>
+                    <div class="stat-value">SunSwap V2</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Decimales</div>
+                    <div class="stat-value">6</div>
+                </div>
+            </div>
+
+            <div class="contract-box">
+                <div>
+                    <div class="stat-label" style="margin-bottom:4px;">Dirección Oficial del Contrato Inteligente:</div>
+                    <div class="contract-address" id="contractAddr">TSA3jH3gr6FqtwqV6p9RJXpcsmkXp8GSGW</div>
+                </div>
+                <button class="copy-btn" onclick="copyContract()">📋 Copiar Contrato</button>
+            </div>
+
+            <div style="text-align: right;">
+                <a href="https://tronscan.org/#/token20/TSA3jH3gr6FqtwqV6p9RJXpcsmkXp8GSGW" target="_blank" rel="noopener" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">
+                    Abrir Explorador de Bloques TronScan ↗
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: COMPRA EN RED -->
+        <section class="section" id="compra">
+            <h2 class="section-title">⚡ Compra en Red (Intercambio Descentralizado)</h2>
+            <p class="section-desc">Si deseas conservar un recuerdo digital de la asociación en tu propia cartera, puedes adquirir tokens directamente a través del pool de liquidez descentralizado en 3 sencillos pasos:</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">10 PRINT "PASO 1"</div>
+                    <h3>Prepara tu Cartera</h3>
+                    <p>Instala la extensión oficial <strong>TronLink</strong> en tu navegador (o la app en el móvil) y asegúrate de tener saldo en <strong>TRX</strong>.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">20 PRINT "PASO 2"</div>
+                    <h3>Conecta con SunSwap</h3>
+                    <p>Pulsa el botón inferior para abrir el intercambio oficial de SunSwap V2 con el contrato del <strong>CPC464</strong> ya precargado.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">30 PRINT "PASO 3"</div>
+                    <h3>Intercambia y Guarda</h3>
+                    <p>Indica la cantidad de TRX que deseas canjear por CPC464, firma la operación en tu cartera y recibirás los tokens al instante.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 10px;">
+                <a href="https://sun.io/?lang=en-US#/v2?t0=T9yD14Nj9j7xAB4dbGeiX9h8unkKHxuWwb&t1=TSA3jH3gr6FqtwqV6p9RJXpcsmkXp8GSGW&type=swap" target="_blank" rel="noopener" class="btn btn-primary">
+                    🚀 Ir Directo al Pool de Compra en SunSwap V2
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p><strong>amstradcpc464.eu</strong> — Proyecto conmemorativo independiente creado por entusiastas de Amstrad.</p>
+        <p style="margin-top: 6px; font-size: 0.8rem;">Token de colección comunitaria sobre red TRON. No constituye asesoramiento financiero ni producto de inversión.</p>
+    </footer>
+
+    <script>
+        function copyContract() {
+            const addr = document.getElementById("contractAddr").innerText;
+            navigator.clipboard.writeText(addr).then(() => {
+                const btn = document.querySelector(".copy-btn");
+                btn.innerText = "✅ ¡Copiado!";
+                setTimeout(() => {
+                    btn.innerText = "📋 Copiar Contrato";
+                }, 2500);
+            });
+        }
+    </script>
+
+</body>
+</html>
