@@ -321,3 +321,90 @@
         <section class="section" id="visualizacion">
             <h2 class="section-title">📡 Visualización en Red y Transparencia</h2>
             <p class="section-desc">El token <strong>CPC464</strong> reside de forma permanente en la cadena de bloques pública de TRON. Cualquier miembro de la comunidad puede auditar en tiempo real los movimientos, carteras y el pool de liquidez.</p>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-label">Suministro Total Fijo</div>
+                    <div class="stat-value">464,000 CPC464</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Red / Estándar</div>
+                    <div class="stat-value">TRON (TRC-20)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Pool Inicial</div>
+                    <div class="stat-value">SunSwap V2</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Decimales</div>
+                    <div class="stat-value">6</div>
+                </div>
+            </div>
+
+            <div class="contract-box">
+                <div>
+                    <div class="stat-label" style="margin-bottom:4px;">Dirección Oficial del Contrato Inteligente:</div>
+                    <div class="contract-address" id="contractAddr">TSA3jH3gr6FqtwqV6p9RJXpcsmkXp8GSGW</div>
+                </div>
+                <button class="copy-btn" onclick="copyContract()">📋 Copiar Contrato</button>
+            </div>
+
+            <div style="text-align: right;">
+                <a href="https://tronscan.org/#/token20/TSA3jH3gr6FqtwqV6p9RJXpcsmkXp8GSGW" target="_blank" rel="noopener" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">
+                    Abrir Explorador de Bloques TronScan ↗
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: COMPRA EN RED -->
+        <section class="section" id="compra">
+            <h2 class="section-title">⚡ Compra en Red (Intercambio Descentralizado)</h2>
+            <p class="section-desc">Si deseas conservar un recuerdo digital de la asociación en tu propia cartera, puedes adquirir tokens directamente a través del pool de liquidez descentralizado en 3 sencillos pasos:</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">10 PRINT "PASO 1"</div>
+                    <h3>Prepara tu Cartera</h3>
+                    <p>Instala la extensión oficial <strong>TronLink</strong> en tu navegador (o la app en el móvil) y asegúrate de tener saldo en <strong>TRX</strong>.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">20 PRINT "PASO 2"</div>
+                    <h3>Conecta con SunSwap</h3>
+                    <p>Pulsa el botón inferior para abrir el intercambio oficial de SunSwap V2, conecta tu wallet y pega la dirección del contrato del <strong>CPC464</strong>[cite: 1].</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">30 PRINT "PASO 3"</div>
+                    <h3>Intercambia y Guarda</h3>
+                    <p>Indica la cantidad de TRX que deseas canjear por CPC464, firma la operación en tu cartera y recibirás los tokens al instante.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 10px;">
+                <a href="https://sun.io/?lang=en-US#/home" target="_blank" rel="noopener" class="btn btn-primary">
+                    🚀 Ir Directo al Pool de Compra en SunSwap V2
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p><strong>amstradcpc464.eu</strong> — Proyecto conmemorativo independiente creado por entusiastas de Amstrad.</p>
+        <p style="margin-top: 6px; font-size: 0.8rem;">Token de colección comunitaria sobre red TRON. No constituye asesoramiento financiero ni producto de inversión.</p>
+    </footer>
+
+    <script>
+        function copyContract() {
+            const addr = document.getElementById("contractAddr").innerText;
+            navigator.clipboard.writeText(addr).then(() => {
+                const btn = document.querySelector(".copy-btn");
+                btn.innerText = "✅ ¡Copiado!";
+                setTimeout(() => {
+                    btn.innerText = "📋 Copiar Contrato";
+                }, 2500);
+            });
+        }
+    </script>
+
+</body>
+</html>
